@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RobinNoSpam
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.9
 // @description  Fuck the robin vote spam that some india developers made
 // @author       GiveMeAllYourCats
 // @match        *.reddit.com/robin*
