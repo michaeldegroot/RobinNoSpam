@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RobinNoSpam
 // @namespace    http://tampermonkey.net/
-// @version      2.3
+// @version      2.4
 // @description  Fuck the robin vote spam that some india developers made
 // @author       GiveMeAllYourCats
 // @match        *.reddit.com/robin*
@@ -11,7 +11,7 @@
 (function() {
     'use strict';
     
-    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","voting will end in approximately","Robin Autogrower","robin-grow","people in the room voting grow","total participants","__","--","No vote: ","auto-grow","~~","super voter pro","twitch.tv","**","autovoted","voting will end soon","==","- -","_-"," . "];
+    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","voting will end in approximately","Robin Autogrower","robin-grow","people in the room voting grow","total participants","__","--","No vote: ","auto-grow","~~","super voter pro","twitch.tv","**","autovoted","voting will end soon","==","- -","_-"," . ","O-o","stay stay","ooo"];
     
     $(document).bind('DOMNodeInserted', function(e) {
       if(!$(e.target).attr('class')) return;
