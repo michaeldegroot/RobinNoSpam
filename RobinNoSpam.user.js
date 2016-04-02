@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RobinNoSpam
 // @namespace    http://tampermonkey.net/
-// @version      2.6
+// @version      2.7
 // @description  Fuck the robin vote spam that some india developers made
 // @author       GiveMeAllYourCats
 // @match        *.reddit.com/robin*
@@ -11,7 +11,7 @@
 (function() {
     'use strict';
     
-    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","voting will end in approximately","Robin Autogrower","robin-grow","people in the room voting grow","total participants","__","--","No vote: ","auto-grow","~~","super voter pro","twitch.tv","**","autovoted","voting will end soon","==","- -","_-"," . ","O-o","stay stay","ooo","The best thing to do is to stay","chapebrone"];
+    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","voting will end in approximately","Robin Autogrower","robin-grow","people in the room voting grow","total participants","__","--","No vote: ","auto-grow","~~","super voter pro","twitch.tv","**","autovoted","voting will end soon","==","- -","_-"," . ","O-o","stay stay","ooo","The best thing to do is to stay","chapebrone","to recreate 4chan","<sexbots>","autovoter","aaaa"];
     
     $(document).bind('DOMNodeInserted', function(e) {
       if(!$(e.target).attr('class')) return;
@@ -22,6 +22,7 @@
         var toFilter = filter[i].toLowerCase();
         var toMatch = lastMsg.html().toLowerCase();
         
+        if(longWords(lastMsg.html())) lastMsg.parent().remove();
         if(toMatch.indexOf(toFilter)>-1) lastMsg.parent().remove();
         if(/[\u0600-\u06FF]/.test(toMatch)) lastMsg.parent().remove();
         if(isDoubleByte(toMatch)) lastMsg.parent().remove();
@@ -36,7 +37,19 @@
       return false;
     }
     
-    function capitalizeFirstLetter(string) {
-      return string.charAt(0).toUpperCase() + string.slice(1);
+    function longWords(str){
+      var strSplit = str.split(" ");
+      var longDetected = false;
+      for(var i=0;i<strSplit.length;i++){
+        if(strSplit[i].length>=20) longDetected = true;
+        if(i>=2){
+          if(strSplit[i]==strSplit[i-1]) longDetected = true;
+        }
+      }
+      return longDetected;
+    }
+    
+    function capitalizeFirstLetter(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
     }
 })();
