@@ -15,7 +15,9 @@
     
     $(document).bind('DOMNodeInserted', function(e) {
       for(var i=0;i<filter.length;i++){
-        $('.robin-message:contains("'+filter[i]+'")').remove();
+        var lastMsg = $('.robin-message:last .robin-message--message');
+        $('.robin-message:last:contains("'+filter[i]+'")').remove();
+        if(/[\u0600-\u06FF]/.test(lastMsg.html())) lastMsg.parent().remove();
       }
     });
 })();
