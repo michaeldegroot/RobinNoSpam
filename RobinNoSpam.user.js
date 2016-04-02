@@ -11,7 +11,7 @@
 (function() {
     'use strict';
     
-    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","voting will end in approximately","Robin Autogrower"];
+    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","voting will end in approximately","Robin Autogrower","robin-grow"];
     
     $(document).bind('DOMNodeInserted', function(e) {
       if(!$(e.target).attr('class')) return;
