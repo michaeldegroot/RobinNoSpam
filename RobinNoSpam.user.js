@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RobinNoSpam
 // @namespace    http://tampermonkey.net/
-// @version      4.1
+// @version      4.2
 // @description  Fuck the robin vote spam that some india developers made
 // @author       GiveMeAllYourCats
 // @match        *.reddit.com/robin*
@@ -12,7 +12,7 @@
     'use strict';
     
     // You can add your own filters if you want:
-    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","Voted for","voting will end in approximately","Robin Autogrower","robin-grow","people in the room voting grow","total participants","__","--","No vote: ","auto-grow","~~","super voter pro","twitch.tv","**","autovoted","voting will end soon","==","- -","_-"," . ","O-o","stay stay","ooo","The best thing to do is to stay","to recreate 4chan","sexbots","autovoter","aaaa","users: ","Sword of potatkek: ","room:","=^·.·^=","automaton","\\/","voted automatically","bots","spam","vape","vaping","vote","Joinrhino","60s pong","robin-hide"];
+    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","Voted to","Voted for","voting will end in approximately","Robin Autogrower","robin-grow","people in the room voting grow","total participants","__","--","No vote: ","auto-grow","~~","super voter pro","twitch.tv","**","autovoted","voting will end soon","==","- -","_-"," . ","O-o","stay stay","ooo","The best thing to do is to stay","to recreate 4chan","sexbots","autovoter","aaaa","users: ","Sword of potatkek: ","room:","=^·.·^=","automaton","\\/","voted automatically","bots","spam","vape","vaping","vote","Joinrhino","60s pong","robin-hide","%"];
     
     var filterUsers = ["chapebrone","Mechanical_Eugeneer"];
     
