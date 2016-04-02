@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RobinNoSpam
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Fuck the robin vote spam that some india developers made
 // @author       GiveMeAllYourCats
 // @match        *.reddit.com/robin*
@@ -11,7 +11,7 @@
 (function() {
     'use strict';
     
-    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","voted to","Voting will end in approximately"];
+    var filter = ["Robin Autovoter","Robin-Grow","Confuzet Auto stay voter 1.0","I automatically voted to grow, and so can you!","Vote Stay!","voted to","Voting will end in approximately","Robin Autogrower"];
     
     $(document).bind('DOMNodeInserted', function(e) {
       for(var i=0;i<filter.length;i++){
